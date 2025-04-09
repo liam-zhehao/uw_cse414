@@ -1,0 +1,187 @@
+版本信息
+Microsoft JDBC Driver 9.4 for SQL Server
+2021 年 7 月
+
+------------
+简介
+------------
+此文件包含最新或其他重要信息，是 Microsoft JDBC  
+Driver 9.4 for SQL Server 文档的补充内容。在安装 JDBC 驱动程序之前，应 
+通读此文件。
+
+你的反馈对我们非常重要，我们将力求即时对你的反馈 
+做出回复。有关使用 JDBC 驱动程序博客和在线论坛提供反馈的信息，
+请参阅 Microsoft JDBC Driver 9.4 for SQL Server 页面，网址为 https://aka.ms/mssql-jdbc-feedback
+
+
+------------
+安装
+------------
+install.txt 中提供了有关安装 JDBC 驱动程序的说明。请参阅该文件，了解 
+有关在 Windows、Linux 和 macOS 操作系统上安装 JDBC 驱动程序的详细信息。
+
+
+---------------------------
+支持的操作系统
+---------------------------
+Microsoft JDBC Driver 9.4 for SQL Server 支持的操作系统包括：
+  Windows Server 2012
+  Windows Server 2012 R2
+  Windows Server 2016
+  Windows Server 2019
+  Windows 8.1
+  Windows 10
+  Linux
+  macOS
+
+上面的列表是某些受支持的操作系统的示例。JDBC 驱动程序 
+可在任何支持使用 Java 虚拟机 (JVM) 的操作系统上工作。
+
+不过，仅对 Linux 和 MacOS（Ubuntu 20.04、Ubuntu 18.04、CentOS 7、SUSE 12、
+ macOS 10.15）的最新操作系统测试了兼容性和支持功能。
+
+
+-----------------------
+支持的 Java 版本
+-----------------------
+Microsoft JDBC Driver 9.4 for SQL Server 已经过测试且支持最新版的 Java 
+开发套件 (JDK) 在上述受支持的操作系统上基于 Open JDK 和 Zulu 构建而来。
+支持 Java Runtime Environment (JRE) 系统库的以下系列版本：
+
+  ----------------------------------------------------------------------
+  JRE 系列版本 | 可实现最大程度支持的驱动程序 JAR
+  ----------------------------------------------------------------------
+  8+                 | mssql-jdbc-9.4.0.jre8.jar
+  11+                | mssql-jdbc-9.4.0.jre11.jar
+  16+                | mssql-jdbc-9.4.0.jre16.jar
+
+
+----------------
+版本内容
+----------------
+Microsoft JDBC Driver 9.4 for SQL Server zip 或 tar 文件将解压缩出以下文件 
+在指定位置（相对于选定的安装目录）解包以下文件：
+
+<安装目录>\sqljdbc_<版本>\<语言>\install.txt
+<安装目录>\sqljdbc_<版本>\<语言>\release.txt
+<安装目录>\sqljdbc_<版本>\<语言>\license.txt
+<安装目录>\sqljdbc_<版本>\<语言>\thirdpartynotices.txt
+<安装目录>\sqljdbc_<版本>\<语言>\mssql-jdbc-9.4.0.jre8.jar
+<安装目录>\sqljdbc_<版本>\<语言>\mssql-jdbc-9.4.0.jre11.jar
+<安装目录>\sqljdbc_<版本>\<语言>\mssql-jdbc-9.4.0.jre16.jar
+<安装目录>\sqljdbc_<版本>\<语言>\auth\x86\mssql-jdbc_auth-9.4.0.x86.dll
+<安装目录>\sqljdbc_<版本>\<语言>\auth\x64\mssql-jdbc_auth-9.4.0.x64.dll
+<安装目录>\sqljdbc_<版本>\<语言>\samples\<示例文件...>
+<安装目录>\sqljdbc_<版本>\<语言>\xa\xa_install.sql
+<安装目录>\sqljdbc_<版本>\<语言>\xa\x86\sqljdbc_xa.dll
+<安装目录>\sqljdbc_<版本>\<语言>\xa\x64\sqljdbc_xa.dll
+
+有关每个组件的详细信息，请参阅联机文档 
+Microsoft JDBC Driver for SQL Server 文档：https://aka.ms/mssql-jdbc
+
+
+-------------
+文档
+-------------
+此包中包括版本信息、安装说明以及许可条款。
+联机可找到所有其他文档。
+
+请注意，已中止脱机帮助文件。
+
+
+---------
+JAR 文件
+---------
+为支持后向兼容性和可能的升级方案，JDBC Driver 9.4 的 
+每个安装包中有三个 JAR 类库：
+	mssql-jdbc-9.4.0.jre8.jar
+	mssql-jdbc-9.4.0.jre11.jar
+	mssql-jdbc-9.4.0.jre16.jar
+
+
+----------------------
+特定于功能的文件
+----------------------
+Azure Active Directory 和集成身份验证（在 Windows 上）组件包含在  
+'auth' 目录中。
+
+JDBC 分布式事务组件包含在“xa”目录中。
+
+
+--------------------
+功能依赖关系
+--------------------
+Microsoft JDBC Driver 9.4 for SQL Server 中的一些功能依赖于 
+下列外部库：
+
+1.结合使用“Always Encrypted”与 Azure Key Vault 提供程序
+   依赖库：azure-keyvault（版本 4.2.8）和 azure-identity（版本 1.3.3）
+
+2.使用“具有安全 Enclave 的 Always Encrypted”
+   依赖库：com.google.code.gson（版本 2.8.7）
+   和 org.bouncycastle（版本 1.69）。仅 JDK 8 需要 org.bouncycastle。
+   
+3.在 Windows、Linux 和 macOS 操作系统中使用“Azure Active Directory 身份验证”
+   依赖库：azure-identity（版本 1.3.3）
+   
+4.使用“useFmtOnly”检索参数元数据
+   依赖库：antlr-runtime（版本 4.9.2）
+   
+有关在标准 Java 应用程序或 Maven 应用程序中包含这些依赖库的详细信息 
+可在此处找到：https://go.microsoft.com/fwlink/?linkid=867575
+
+-------
+示例
+-------
+说明 JDBC 驱动程序各项功能的示例应用程序包含在“samples”
+"sample"目录中。有关每个示例以及如何运行它们的详细信息，请参阅联机 
+文档。
+
+
+-----------
+更改列表
+-----------
+有关每个版本中进行的更改、修复和改进的详细列表，请参阅：https://aka.ms/mssql-jdbc-release-notes
+
+------------
+已知问题
+------------
+下面是 Microsoft JDBC Driver 9.4 for SQL Server 的已知问题：
+
+1) 与 SQL Azure 的连接断开
+
+连接到 SQL Azure 时，空闲连接在处于不活动状态一定时间后可能被某个 
+网络组件（如防火墙）终止。若要避免通过网络组件断开空闲连接，
+应在加载驱动程序的操作系统上设定以下注册表 
+设置（或其非 Windows 等效项）：
+           
+注册表设置                                                                   推荐值
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\KeepAliveTime            30000
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\KeepAliveInterval         1000
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\TcpMaxDataRetransmission  10
+
+2) 结合使用 TVP 和 SQL_VARIANT 时 
+
+2.a) 日期值
+
+当使用 TVP 填充一个表时，且该表包含 sql_variant 列中存储的 datetime/smalldatetime/date 值，
+在 ResultSet 上调用 getDateTime()/getSmallDateTime()/getDate() 将不起作用，并引发以下异常：
+
+	java.lang.String 不能强制转换为 java.sql.Timestamp
+
+解决方法：改为使用 getString() 或 getObject()。
+
+2.b) 对 null 值结合使用 TVP 与 SQL_VARIANT
+
+如果使用 TVP 填充一个表，并将 NULL 值发送给 sql_variant 列类型，会引发
+异常，因为当前不支持在 TVP 中对列类型 sql_variant 插入 NULL 值。
+
+
+3) 使用 NTLM 身份验证时
+
+目前不支持同时启用扩展保护和加密连接。
+
+4) 使用 useFmtOnly 时
+
+此功能存在一些问题，是由 SQL 分析逻辑中的缺陷导致的。
+有关更多详细信息和解决方法建议，请参阅 https://aka.ms/mssql-jdbc-usefmtonly。

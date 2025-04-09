@@ -1,0 +1,39 @@
+安装说明
+Microsoft JDBC Driver 9.4 for SQL Server
+
+
+简介
+------------
+以下是有关解压缩 sqljdbc_<version>_enu.zip 和 
+sqljdbc_<version>_enu.tar.gz 的说明。
+
+
+WINDOWS
+-------
+1.阅读 license.txt 文件。下载和使用 Microsoft JDBC Driver 9.4 for SQL Server 即表明接受此许可。
+
+2.将 sqljdbc_<version>_enu.zip 下载到一个临时目录。
+
+3.提取 sqljdbc_<version>_enu.zip
+
+4.出现提示时输入提取目录；建议
+   在 %ProgramFiles% 中解压缩此 zip 文件，并使用下面的默认目录：
+
+	Microsoft JDBC DRIVER 9.4 for SQL Server
+
+
+UNIX
+----
+1.阅读 license.txt 文件。下载和使用 Microsoft JDBC Driver 9.4 for SQL Server 即表明接受此许可。
+
+2.将 sqljdbc_<version>_enu.tar.gz 下载到一个临时目录。
+
+3.若要解压缩此压缩的 tar 文件，请导航至要解压缩驱动程序的目录中，
+   然后键入：
+
+	gzip -d sqljdbc_<version>_enu.tar.gz
+
+4.若要解压缩此 tar 文件，请将其移至要安装驱动程序的目录中， 
+   然后键入：
+
+	tar -xf sqljdbc_<version>_enu.tar
