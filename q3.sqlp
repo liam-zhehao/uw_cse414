@@ -1,0 +1,7 @@
+USE geo;
+SELECT z.`#text` as religion, count(distinct y.name) as num_countries
+FROM geo.world x
+UNNEST x.mondial.country y
+UNNEST y.religions z
+GROUP BY z.`#text`
+ORDER BY num_countries DESC;

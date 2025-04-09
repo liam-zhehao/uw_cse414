@@ -1,0 +1,14 @@
+USE geo;
+SELECT z.`#text` as ethnic_group,
+       count(distinct y.name) as num_countries,
+       sum(float(z.`-percentage`) * float(y.population) / 100) as total_population
+FROM geo.world x
+UNNEST x.mondial.country y
+UNNEST 
+  CASE 
+    WHEN is_array(y.ethnicgroups) THEN y.ethnicgroups
+    ELSE [y.ethnicgroups] 
+  END as z
+WHERE y.ethnicgroups IS NOT MISSING
+GROUP BY z.`#text`
+ORDER BY z.`#text`;

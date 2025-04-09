@@ -1,0 +1,8 @@
+USE geo;
+SELECT c.`-car_code` as country_code, c.name as country_name,
+    ARRAY_AGG(s.name) as seas
+FROM geo.world x, x.mondial.country c, x.mondial.sea s
+WHERE ANY cc IN SPLIT(s.`-country`, ' ') SATISFIES cc = c.`-car_code`
+GROUP BY c.`-car_code`, c.name
+HAVING COUNT(DISTINCT s.name) >= 2
+ORDER BY COUNT(DISTINCT s.name) DESC;

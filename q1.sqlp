@@ -1,0 +1,7 @@
+USE geo;
+SELECT c.name as city
+FROM geo.world w UNNEST w.mondial.country as country
+UNNEST country.province as province
+UNNEST (CASE WHEN is_array(province.city) THEN province.city ELSE [province.city] END) as c
+WHERE country.`-car_code` = "PE"
+ORDER BY c.name;

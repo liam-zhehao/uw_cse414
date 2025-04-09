@@ -1,0 +1,4 @@
+USE geo;
+SELECT y.name as country, y.population as population, ARRAY_LENGTH(y.religion) as num_religions
+FROM geo.world x, x.mondial.country y
+ORDER BY y.name;
