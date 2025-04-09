@@ -1,0 +1,32 @@
+a.R(A,B,C,D,E)
+X = D
+X+ = {D, B}
+R1(D, B)	BCNF because: D+ = D, B	; B+ = B
+R2(A,C,D,E) 	BCNF because: CE★A is already in BCNF in R2, it doesn¨t need further decomposition
+
+R1(D, B)  R2(A,C,D,E)
+
+b.S(A,B,C,D,E)
+X = A
+X+ = {A, E}
+R1(A, E)	BCNF because: A+ = A, E	; E+ = E
+R2(A,B,C,D)
+X = B, C
+X+ = {B, C, A}
+R3(B, C, A) 	BCNF because: (B, C)+ = B, C, A ; A+ = A
+R4(B, C, D)
+
+R1(A, E)  R3(B, C, A)  R4(B, C, D)
+
+c. 	All trivial dependencies.
+　　	A -> A, B -> B, C -> C, D -> D
+　　	AB -> AB, AC -> AC, AD -> AD, BC -> BC, BD -> BD, CD -> CD
+　　	ABC -> ABC, ABD -> ABD, ACD -> ACD, BCD -> BCD
+　　	ABCD -> ABCD
+　　
+d. 	A -> ABCD, B -> ABCD, C -> ABCD, D -> ABCD
+
+e. 	B -> C, C -> B, A -> D, D -> A, AD -> BC
+
+
+　　

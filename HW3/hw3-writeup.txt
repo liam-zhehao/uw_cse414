@@ -1,0 +1,12 @@
+Pros of Using a Cloud-Hosted DBMS:
+1. Accessibility: Data can be accessed anytime, anywhere with an internet connection.
+2. Flexibility: Cloud hosted DBMS can offer different specifications and types of compute, storage and network resources according to needs.
+3. Security: Cloud hosted DBMS provides a variety of security measures, such as firewall, network isolation, access control.
+Cons of Using a Cloud-Hosted DBMS:
+1. Latency: Depending on the Internet connection, there may be latency issues, which can affect performance.
+2. Dependent on Internet connection: Any network connectivity issues can cause database access to be interrupted, affecting the continuity and efficiency.
+3. Customization Limitations: Users have less control and customization options than self-hosted databases.
+
+I would recommend it to a classmate for tinkering/experimentation, but not to a future colleague for a project. 
+It's good enough for students' learning without considering latency and connectivity requirements.
+But for work scenarios that may involve projects, it may be better to use a local DBMS within the company.
